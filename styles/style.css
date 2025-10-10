@@ -132,8 +132,6 @@ header h1 {
   display: none;
 }
 
-
-
 @media (max-width: 900px) {
   header {
     padding: 10px 20px;
@@ -204,6 +202,7 @@ header h1 {
 
 .middle {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
@@ -211,6 +210,62 @@ header h1 {
   width: 80vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.textTop,
+.textMiddle,
+.textBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  margin-top: -1%;
+  letter-spacing: -0.2rem;
+  
+}
+
+.textTop h2,
+.textMiddle h2,
+.textBottom h2{
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--black);
+}
+
+.textTop i,
+.textMiddle i{
+  color: #fb8500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textTop img,
+.textMiddle img,
+.textBottom img {
+  width: 140px;
+  height: 80px;
+  border-radius: 30px / 50%;
+  background: linear-gradient(to bottom, #fff, #ccc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 4px solid var(--black);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  object-fit: cover;
+  transform-origin: center;
+}
+
+.textTop img:hover,
+.textMiddle img:hover,
+.textBottom img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.textTop i:hover,
+.textMiddle i:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .introFooter {
@@ -307,6 +362,8 @@ header h1 {
   height: auto;
   padding: 1rem 3rem;
   margin: 0 auto;
+  background-color: var(--black);
+  box-shadow: 0 -10px 20px -10px #080807;
 }
 
 .about h2 {
@@ -314,7 +371,7 @@ header h1 {
   font-size: 8rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  color: var(--black);
+  color: var(--white);
 }
 
 .about h2 span {
@@ -328,27 +385,22 @@ header h1 {
 
 .about p {
   font-size: 1rem;
-  color: var(--black);
+  color: var(--white);
   margin-bottom: 2rem;
   text-align: left;
 }
 
-/* EXAMPLE: Media query to handle the large font on smaller screens */
 @media (max-width: 768px) {
   .about {
-    /* Muda o padding para evitar que o conteúdo toque as bordas do aparelho */
     padding: 1rem 1.5rem;
-    /* O grid continua com 4 colunas, mas vamos fazê-los ocupar a largura total */
   }
 
-  /* 2. Redefine o Título */
   .about h2 {
     font-size: 4rem;
     grid-column: 1 / span 4;
     text-align: left;
   }
 
-  /* 3. Redefine o Parágrafo */
   .about .text {
     grid-column: 2 / span 4;
   }
@@ -360,6 +412,10 @@ header h1 {
 
 .contact {
 }
+
+/* EXPERIENCE SECTION */
+
+
 
 /* FOOTER SECTION */
 footer {
