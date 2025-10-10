@@ -1,0 +1,43 @@
+/* Roll Effect Universal */
+.roll-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+.roll-effect .roll-inner {
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.roll-effect:hover .roll-inner {
+  transform: translateY(-100%);
+}
+
+.roll-effect .roll-inner span {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+.roll-effect .roll-inner span:last-child {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.roll-effect:hover .roll-inner,
+*:hover > .roll-effect .roll-inner {
+  transform: translateY(-100%);
+}
+
+.avatar {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 20vh;
+  height: 20vh;
+  will-change: transform;
+}
