@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
   </head>
   <body>
-    <header>
+    <header id="home">
       <div class="leftHeader">
         <h1>Diogo Pinto</h1>
       </div>
@@ -20,28 +20,29 @@
         <div class="UpNav">
           <ul>
             <li>
-              <a href="#home">
-                <span class="roll-effect"> 
+              <a href="#about">
+                <span class="roll-effect">
                   <span class="roll-inner">
-                    <span>Home,</span>
-                    <span>Home,</span>
+                    <span>About,</span>
+                    <span>About,</span>
                   </span>
                 </span>
               </a>
             </li>
+            <li></li>
             <li>
-              <a href="#about">
-                <span class="roll-effect"> 
+              <a href="#skills">
+                <span class="roll-effect">
                   <span class="roll-inner">
-                    <span>About,</span>
-                    <span>About,</span>
+                    <span>Skills,</span>
+                    <span>Skills,</span>
                   </span>
                 </span>
               </a>
             </li>
             <li>
               <a href="#projects">
-                <span class="roll-effect"> 
+                <span class="roll-effect">
                   <span class="roll-inner">
                     <span>Projects,</span>
                     <span>Projects,</span>
@@ -51,7 +52,7 @@
             </li>
             <li>
               <a href="#contact">
-                <span class="roll-effect"> 
+                <span class="roll-effect">
                   <span class="roll-inner">
                     <span>Contact</span>
                     <span>Contact</span>
@@ -59,16 +60,21 @@
                 </span>
               </a>
             </li>
-            
           </ul>
         </div>
 
         <button class="get-in-touch-btn">
-          <span class="roll-effect"> 
+          <span class="roll-effect">
             <span class="roll-inner">
-              <span>GET IN TOUCH</span><span>GET IN TOUCH</span></span>
-            </span>
+              <span>GET IN TOUCH</span><span>GET IN TOUCH</span></span
+            >
+          </span>
           <div class="circle"></div>
+        </button>
+        <button class="menu">
+          <span class="roll-effect">
+            <span class="roll-inner"> <span>MENU</span><span>MENU</span></span>
+          </span>
         </button>
       </div>
     </header>
@@ -76,8 +82,8 @@
     <main>
       <section id="home" class="introduction">
         <div class="middle">
+          <img src="assets/images/avatar.svg" alt="Avatar" class="avatar" />
           <!-- <h2>Welcome to My Portfolio</h2> -->
-             <img src="assets/images/avatar.svg" alt="Avatar" class="avatar" />
         </div>
 
         <div class="introFooter">
@@ -86,12 +92,116 @@
           </div>
           <div class="right">
             <p>Portugal</p>
-            <p>(SCROLL TO EXPLORE)</p>
+            <p class="explore">(SCROLL TO EXPLORE)</p>
           </div>
         </div>
-
       </section>
 
+      <section id="about" class="about">
+        <h2>About <span>Me</span></h2>
+        <div class="text">
+          <p>
+            I'm <b>Diogo Pinto</b>, a passionate web developer with a knack for
+            creating engaging and user-friendly websites. With a background in
+            computer science and a love for design, I blend technical skills
+            with creativity to deliver exceptional web experiences.
+          </p>
+        </div>
+      </section>
+      
+
+      <footer>
+        <div class="one">
+          <img src="assets/images/footer.png" alt="footer" />
+          <h1>DP</h1>
+        </div>
+        <div class="two">
+          <h3>(NAVIGATION)</h3>
+          <ul>
+            <li>
+              <a href="#home">
+                <span class="roll-effect">
+                  <span class="roll-inner">
+                    <span>Home</span><span>Home</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <span class="roll-effect">
+                  <span class="roll-inner">
+                    <span>About</span><span>About</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <span class="roll-effect">
+                  <span class="roll-inner">
+                    <span>Skills</span><span>Skills</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                <span class="roll-effect">
+                  <span class="roll-inner">
+                    <span>Projects</span><span>Projects</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <span class="roll-effect">
+                  <span class="roll-inner">
+                    <span>Contact</span><span>Contact</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="three">
+          <h3>(ACKNOWLEDGEMENT)</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio
+            eos ut pariatur non quae dicta eum, nam repellendus repellat libero
+            mollitia. Modi iusto aliquam est esse repudiandae maiores, id optio.
+          </p>
+          <h3 style="padding-top: 8%">(INFO)</h3>
+          <p><b>E:</b> diogo.a.p.pinto@hotmail.com</p>
+        </div>
+        <div class="bottom bone">
+          <p>© 2025 | All rights reserved</p>
+        </div>
+        <div class="bottom btwo"></div>
+        <div class="bottom bthree">
+          <p>
+            <a
+              href="https://www.linkedin.com/in/diogo-pinto-4ab865278/"
+              target="_blank"
+            >
+              <span class="roll-effect">
+                <span class="roll-inner">
+                  <span>LINKEDIN</span>
+                  <span>LINKEDIN</span>
+                </span>
+              </span>
+            </a>
+          </p>
+
+          <p>
+            MADE BY
+            <a href="https://github.com/Dpinto9/" target="_blank">
+              <span class="underline-loop">DPINTO9</span>
+            </a>
+          </p>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

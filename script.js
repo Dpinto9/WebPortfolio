@@ -94,3 +94,26 @@ if (document.readyState === 'loading') {
 } else {
   new AvatarWalker();
 }
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+
+    // If you have a fixed header, set headerOffset to its height (in px)
+    const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+
+    // Optional: update URL hash without jumping
+    history.pushState(null, '', href);
+  });
+});
