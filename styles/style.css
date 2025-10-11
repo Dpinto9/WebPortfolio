@@ -507,6 +507,81 @@ header h1 {
 }
 
 /* EXPERIENCE SECTION */
+.experiences {
+  height: 40vh;
+  background-color: var(--black);
+  box-shadow: 0 10px 20px -10px #080807;
+  color: var(--white);
+}
+
+/* SKILLS SECTION */
+.skills h2 {
+  font-size: 5rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--black);
+  letter-spacing: var(--h1-space);
+  padding: 2rem 3rem 0rem 3rem;
+}
+
+@media (max-width: 780px) {
+  .skills h2 {
+    font-size: 4rem;
+    padding: 1rem 1.5rem 0rem 1.5rem;
+    letter-spacing: -0.3rem;
+  }
+}
+
+.skills h2 i {
+  font-style: normal;
+  color: #fb8500;
+}
+
+.carousel {
+  padding: 1rem 3rem;
+  display: flex;
+  overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.group {
+  display: flex;
+  animation: spin 20s infinite linear;
+  gap: 1em;
+  padding-right: 1em;
+}
+
+.carousel:hover .group {
+  animation-play-state: paused;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card{
+  flex: 0 0 5em;
+  height: auto;
+  padding: 1em;
+  border-radius: .2em;
+  text-align: center;
+  align-content: center;
+}
+
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
 
 /* FOOTER SECTION */
 footer {
