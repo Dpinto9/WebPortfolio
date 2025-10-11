@@ -388,6 +388,66 @@
         </div>
       </section>
 
+      <!-- Modal de Contato -->
+      <div class="contact-modal-overlay">
+        <div class="contact-modal">
+          <button class="close-modal" aria-label="Fechar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <h3>Get in Touch</h3>
+          <p class="modal-subtitle">Let's create something amazing together!</p>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+
       <footer>
         <div class="one">
           <img src="assets/images/footer.png" alt="footer" />
@@ -452,7 +512,12 @@
             shaping both my technical and creative approach to programming.
           </p>
           <h3 style="padding-top: 8%">(INFO)</h3>
-          <p><b>E:</b> diogo.a.p.pinto@hotmail.com</p>
+          <p>
+            <b>E:</b>
+            <span style="unicode-bidi: bidi-override; direction: rtl">
+              moc.liam&#116;oh&#64;o&#116;nip.p.a.ogoid
+            </span>
+          </p>
         </div>
         <div class="bottom bone">
           <p>© 2025 | All rights reserved</p>
