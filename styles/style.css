@@ -185,7 +185,7 @@ header h1 {
 
 @media (max-width: 420px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     letter-spacing: -0.2rem;
   }
 }
@@ -266,29 +266,7 @@ header h1 {
   cursor: pointer;
 }
 
-@media (max-width: 420px) {
-  .textTop h2,
-  .textMiddle h2,
-  .textBottom h2 {
-    font-size: 2.5rem;
-  }
 
-  .textTop img,
-  .textMiddle img,
-  .textBottom img {
-    width: 90px;
-    height: 50px;
-    border: 3px solid var(--black);
-  }
-
-  .textTop,
-  .textMiddle,
-  .textBottom {
-    gap: 0.6rem;
-    letter-spacing: -0.1rem;
-    flex-wrap: wrap;
-  }
-}
 @media (max-width: 1120px) {
   .textTop h2,
   .textMiddle h2,
@@ -339,6 +317,10 @@ header h1 {
 
 /* Mobile Portrait */
 @media (max-width: 480px) {
+  .middle {
+    margin-top: -4vh;
+  }
+
   .textTop,
   .textMiddle,
   .textBottom {
@@ -350,7 +332,7 @@ header h1 {
   .textTop h2,
   .textMiddle h2,
   .textBottom h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .textTop img,
