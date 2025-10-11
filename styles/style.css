@@ -6,6 +6,7 @@
   --black: #080807;
   --white: #fcfcfc;
   --grey: #dcddde;
+  --orange: #fb8500;
 
   --h1-space: -0.45rem;
   --h2-space: -0.05em;
@@ -119,7 +120,7 @@ header h1 {
 }
 
 .get-in-touch-btn:hover .circle::before {
-  background: var(--yellow);
+  background: var(--orange);
   width: 80%;
   height: 80%;
 }
@@ -234,7 +235,7 @@ header h1 {
 
 .textTop i,
 .textMiddle i {
-  color: #fb8500;
+  color: var(--orange);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -265,7 +266,6 @@ header h1 {
   text-decoration: underline;
   cursor: pointer;
 }
-
 
 @media (max-width: 1120px) {
   .textTop h2,
@@ -315,7 +315,6 @@ header h1 {
   }
 }
 
-/* Mobile Portrait */
 @media (max-width: 480px) {
   .middle {
     margin-top: -4vh;
@@ -516,7 +515,7 @@ header h1 {
 
 .skills h2 i {
   font-style: normal;
-  color: #fb8500;
+  color: var(--orange);
 }
 
 .carousel {
@@ -546,15 +545,163 @@ header h1 {
   cursor: pointer;
 }
 
-.card{
+.card {
   flex: 0 0 5em;
   height: auto;
   padding: 1em;
-  border-radius: .2em;
+  border-radius: 0.2em;
   text-align: center;
   align-content: center;
 }
 
+
+/* MOST USED LANGUAGES */
+.progressBar {
+  margin: 40px auto;
+}
+
+.progressBar h3 {
+  text-align: right;
+  font-size: 4rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--black);
+  letter-spacing: var(--h2-space);
+  padding: 2rem 3rem 0rem 3rem;
+}
+
+
+
+.progressBar i {
+  color: var(--orange);
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Main Bar */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  display: flex;
+  height: 35px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -10px #080807;
+}
+
+.lang {
+  height: 100%;
+}
+
+/* Legend Below */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 15px;
+  justify-items: start;
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--black);
+  
+}
+
+@media (max-width: 780px) {
+  .progressBar h3 {
+    font-size: 3.5rem;
+    padding: 1rem 1.5rem 0rem 1.5rem;
+    letter-spacing: -0.3rem;
+  }
+
+  .legend{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 1vh;
+  height: 1vh;
+  border-radius: 50%;
+  display: inline-block;
+  
+}
+
+.dot:hover{
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.percent {
+  margin-left: auto;
+}
+
+/* Colors */
+.html {
+  background: #f16529;
+}
+.js {
+  background: #f7df1e;
+}
+.python {
+  background: #3572a5;
+}
+.css {
+  background: #f129d0;
+}
+.php {
+  background: #787cb5;
+}
+.csharp {
+  background: #68217a;
+}
+.ts {
+  background: #3178c6;
+}
+.cpp {
+  background: #00599c;
+}
+
+.dot.html {
+  background: #f16529;
+}
+.dot.js {
+  background: #f7df1e;
+}
+.dot.python {
+  background: #3572a5;
+}
+.dot.css {
+  background: #f129d0;
+}
+.dot.php {
+  background: #787cb5;
+}
+.dot.csharp {
+  background: #68217a;
+}
+.dot.ts {
+  background: #3178c6;
+}
+.dot.cpp {
+  background: #00599c;
+}
 
 @keyframes spin {
   from {
@@ -563,6 +710,15 @@ header h1 {
   to {
     translate: -100%;
   }
+}
+
+/* PROJECTS SECTION */
+.projects {
+  height: 40vh;
+  background-color: var(--black);
+  box-shadow: 0px 10px 20px -10px #080807, 
+            0px -10px 20px -10px #080807;
+  color: var(--white);
 }
 
 /* FOOTER SECTION */
