@@ -1,4 +1,4 @@
-/* Roll Effect Universal */
+/* ROLL EFFECT */
 .roll-effect {
   display: inline-block;
   position: relative;
@@ -84,5 +84,25 @@
   100% {
     transform: scaleX(1);
     transform-origin: left;
+  }
+}
+
+/* INFINITE SPIN */
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+/* ROTATE */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
