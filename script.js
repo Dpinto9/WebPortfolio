@@ -179,3 +179,34 @@ contactForm.addEventListener("submit", (e) => {
     document.body.style.overflow = "";
   }, 500);
 });
+
+const menuBtn = document.querySelector('.menu');
+const menuOverlay = document.querySelector('.menu-modal-overlay');
+const closeMenuBtn = document.querySelector('.close-menu');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+menuBtn.addEventListener('click', () => {
+  menuOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+closeMenuBtn.addEventListener('click', () => {
+  menuOverlay.classList.remove('active');
+  document.body.style.overflow = 'auto';
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+});
+
+// Fechar ao clicar fora
+menuOverlay.addEventListener('click', (e) => {
+  if (e.target === menuOverlay) {
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+});
+
