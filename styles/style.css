@@ -29,6 +29,7 @@ body {
   color: #333;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  cursor: default;
 }
 
 /* HEADER SECTION */
@@ -190,6 +191,8 @@ header h1 {
     letter-spacing: -0.2rem;
   }
 }
+
+
 
 /* INTRODUCTION SECTION */
 .introduction {
@@ -429,15 +432,15 @@ header h1 {
   }
 }
 
+/* ABOUT SECTION */
 .about {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  height: auto;
   padding: 1rem 3rem;
   margin: 0 auto;
   background-color: var(--black);
-  box-shadow: 0 -10px 20px -10px #080807;
+  /* box-shadow: 0 -10px 20px -10px #080807; */
 }
 
 .about h2 {
@@ -464,6 +467,42 @@ header h1 {
   text-align: left;
 }
 
+.about a {
+  text-decoration: none;
+}
+
+.about .socials {
+  grid-column: 2 / span 1; 
+  grid-row: 2 / span 1; 
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem; 
+  align-self: start; 
+  justify-self: end; 
+  margin-bottom: 1rem; 
+  margin-right: 1rem; 
+}
+
+.about .social-button {
+  width: 50px;
+  height: 50px; 
+  border-radius: 50%; 
+  background-color: var(--white); 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  border: none; 
+  cursor: pointer; 
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.about .social-button:hover {
+  transform: scale(1.1); 
+  background-color: #ccc; 
+}
+
+
+
 @media (max-width: 768px) {
   .about {
     padding: 1rem 1.5rem;
@@ -482,18 +521,208 @@ header h1 {
   .about p {
     margin-bottom: 2rem;
   }
-}
 
-.contact {
+  .about .socials {
+    grid-column: 1 / span 1; 
+    grid-row: 3 / span 1; 
+    flex-direction: row; 
+    gap: 0.5rem; 
+    margin-left: 0.5rem; 
+    margin-bottom: 0.5rem;
+  }
+
+  .about .social-button {
+    width: 40px; 
+    height: 40px;
+  }
 }
 
 /* EXPERIENCE SECTION */
 .experiences {
-  height: 40vh;
-  background-color: var(--black);
-  box-shadow: 0 10px 20px -10px #080807;
+  background: var(--black);
   color: var(--white);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
 }
+
+/* --- TITLE --- */
+.experiences h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.experiences h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, var(--orange), transparent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* --- GRID --- */
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* --- CARD STYLE --- */
+.experiences .text {
+  background: linear-gradient(145deg, #0d0d0d, #050505);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(201, 166, 70, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.experiences .text:hover {
+  transform: translateY(-8px);
+  border-color: var(--orange);
+  box-shadow: 0 12px 32px rgba(201, 166, 70, 0.25);
+}
+
+/* --- CARD TITLE --- */
+.experiences .text h3 {
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.experiences .text h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--grey);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* --- TAGS --- */
+.tags {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.date,
+.company {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.date {
+  background: rgba(255, 255, 255, 0.05);
+  color: #c5c5c5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: default;
+}
+
+.company {
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0e0e0e;
+  background: #c9a646;
+  border: 1px solid #c9a646;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* Fundo animado */
+.company::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #c9a646;
+  z-index: -1;
+  transition: width 0.6s ease;
+  border-radius: 30px;
+}
+
+/* Ao passar o rato: fundo desaparece da esquerda para a direita */
+.company:hover::before {
+  width: 0;
+}
+
+/* Texto muda de cor para manter contraste */
+.company:hover {
+  color: #c9a646;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* --- PARAGRAPH --- */
+.experiences .text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d0d0d0;
+  font-family: "Inter", sans-serif;
+  margin-top: 0.5rem;
+}
+
+/* --- TECH STACK BADGES --- */
+.tech {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.tech img {
+  height: 28px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation for each badge */
+.tech img:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(201, 166, 70, 0.25);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .experiences {
+    padding: 3rem 1.5rem;
+  }
+
+  .experiences h2 {
+    font-size: 2.8rem;
+  }
+
+  .experiences-grid {
+    gap: 2rem;
+  }
+}
+
 
 /* SKILLS SECTION */
 .skills h2 {
