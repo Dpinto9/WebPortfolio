@@ -99,7 +99,6 @@ if (document.readyState === "loading") {
   new AvatarWalker();
 }
 
-
 /* ===================================
    SMOOTH SCROLL FOR ANCHOR LINKS
    =================================== */
@@ -108,15 +107,16 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     const href = this.getAttribute("href");
     if (!href || href === "#") return;
-    
+
     const target = document.querySelector(href);
     if (!target) return;
-    
+
     e.preventDefault();
 
     // If you have a fixed header, set headerOffset to its height (in px)
     const headerOffset = document.querySelector("header")?.offsetHeight || 0;
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    const targetPosition =
+      target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
     window.scrollTo({
       top: targetPosition,
@@ -127,7 +127,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     history.pushState(null, "", href);
   });
 });
-
 
 /* ===================================
    CONTACT MODAL
@@ -182,7 +181,9 @@ contactForm.addEventListener("submit", (e) => {
 
   const subject = `New message from ${name}`;
   const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-  const mailtoLink = `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${body}`;
+  const mailtoLink = `mailto:${yourEmail}?subject=${encodeURIComponent(
+    subject
+  )}&body=${body}`;
 
   window.location.href = mailtoLink;
 
@@ -193,85 +194,89 @@ contactForm.addEventListener("submit", (e) => {
   }, 500);
 });
 
-
 /* ===================================
    MENU MODAL
    =================================== */
 
-const menuBtn = document.querySelector('.menu');
-const menuOverlay = document.querySelector('.menu-modal-overlay');
-const closeMenuBtn = document.querySelector('.close-menu');
-const menuLinks = document.querySelectorAll('.menu-link');
+const menuBtn = document.querySelector(".menu");
+const menuOverlay = document.querySelector(".menu-modal-overlay");
+const closeMenuBtn = document.querySelector(".close-menu");
+const menuLinks = document.querySelectorAll(".menu-link");
 
 // Open menu modal
-menuBtn.addEventListener('click', () => {
-  menuOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+menuBtn.addEventListener("click", () => {
+  menuOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
 });
 
 // Close menu modal
-closeMenuBtn.addEventListener('click', () => {
-  menuOverlay.classList.remove('active');
-  document.body.style.overflow = 'auto';
+closeMenuBtn.addEventListener("click", () => {
+  menuOverlay.classList.remove("active");
+  document.body.style.overflow = "hidden";
+  document.body.style.overflowY = "auto";
 });
 
 // Close menu when clicking on links
-menuLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    menuOverlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuOverlay.classList.remove("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "auto";
   });
 });
 
 // Close menu when clicking outside
-menuOverlay.addEventListener('click', (e) => {
+menuOverlay.addEventListener("click", (e) => {
   if (e.target === menuOverlay) {
-    menuOverlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    menuOverlay.classList.remove("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "auto";
   }
 });
-
 
 /* ===================================
    FIXED BUTTONS VISIBILITY (SCROLL)
    =================================== */
 
-const getInTouchBtn = document.querySelector('.get-in-touch-btn');
-const homeSection = document.querySelector('#home');
+const getInTouchBtn = document.querySelector(".get-in-touch-btn");
+const homeSection = document.querySelector("#home");
 
-console.log('Menu button:', menuBtn);
-console.log('Get in touch button:', getInTouchBtn);
-console.log('Home section:', homeSection);
+console.log("Menu button:", menuBtn);
+console.log("Get in touch button:", getInTouchBtn);
+console.log("Home section:", homeSection);
 
 // Intersection Observer to show/hide buttons based on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    console.log('Home intersection:', entry.isIntersecting);
-    
-    if (!entry.isIntersecting) {
-      console.log('Left home - showing buttons');
-      setTimeout(() => {
-        if (menuBtn) menuBtn.classList.add('show-menu');
-        if (getInTouchBtn) {
-          getInTouchBtn.classList.add('fixed');
-          setTimeout(() => {
-            getInTouchBtn.classList.add('show-btn');
-          }, 50);
-        }
-      }, 300);
-    } else {
-      if (menuBtn) menuBtn.classList.remove('show-menu');
-      if (getInTouchBtn) {
-        getInTouchBtn.classList.remove('show-btn');
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      console.log("Home intersection:", entry.isIntersecting);
+
+      if (!entry.isIntersecting) {
+        console.log("Left home - showing buttons");
         setTimeout(() => {
-          getInTouchBtn.classList.remove('fixed');
-        }, 500); // Wait for animation to finish
+          if (menuBtn) menuBtn.classList.add("show-menu");
+          if (getInTouchBtn) {
+            getInTouchBtn.classList.add("fixed");
+            setTimeout(() => {
+              getInTouchBtn.classList.add("show-btn");
+            }, 50);
+          }
+        }, 300);
+      } else {
+        if (menuBtn) menuBtn.classList.remove("show-menu");
+        if (getInTouchBtn) {
+          getInTouchBtn.classList.remove("show-btn");
+          setTimeout(() => {
+            getInTouchBtn.classList.remove("fixed");
+          }, 500); // Wait for animation to finish
+        }
       }
-    }
-  });
-}, {
-  threshold: 0.1
-});
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
 
 // Start observing home section
 if (homeSection) observer.observe(homeSection);
