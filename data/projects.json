@@ -18,7 +18,7 @@
       "title": "Smart Access Control System (IoT + Cloud)",
       "description": "Complete access-control system integrating an ESP32 IoT device with Google Cloud. Features QR and PIN-based multi-factor authentication, secure API communication, and real-time access logging.",
       "category": "iot",
-      "image": "https://via.placeholder.com/400x250/2a9d8f/ffffff?text=Smart+Access+Control",
+      "image": "assets/images/projects/lock.png",
       "date": "2025",
       "technologies": ["Flask", "Firebase", "ESP32", "JWT", "2FA", "Docker"],
       "links": {
@@ -31,7 +31,7 @@
       "title": "Wishlist App",
       "description": "Full-stack web app for managing personal wishlists with collaborative item reservation, real-time synchronization, and intuitive UI.",
       "category": "fullstack",
-      "image": "https://via.placeholder.com/400x250/fb8500/ffffff?text=Wishlist+App",
+      "image": "assets/images/projects/wishlist.png",
       "date": "2025",
       "technologies": ["Node.js", "Express", "Firebase", "JavaScript", "CSS"],
       "links": {
@@ -44,7 +44,7 @@
       "title": "Sports Facilities Management System (API + CLI)",
       "description": "RESTful API in .NET 8 for managing sports stadiums, including authentication, CRUD operations, and report generation via CLI in multiple formats (CSV, XML, HTML, XSLT).",
       "category": "backend",
-      "image": "https://via.placeholder.com/400x250/3a0ca3/ffffff?text=Sports+Management+API",
+      "image": "assets/images/projects/api.png",
       "date": "2024",
       "technologies": [".NET 8", "Entity Framework", "Postman", "Visual Studio"],
       "links": {
@@ -57,7 +57,7 @@
       "title": "Token-Based Game Management Platform",
       "description": "Web platform for managing games with internal token economy, progression logic, rewards, and an administrative dashboard.",
       "category": "fullstack",
-      "image": "https://via.placeholder.com/400x250/7209b7/ffffff?text=Game+Management+Platform",
+      "image": "assets/images/projects/token.png",
       "date": "2024",
       "technologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       "links": {
