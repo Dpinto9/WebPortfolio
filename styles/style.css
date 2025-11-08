@@ -350,7 +350,7 @@ header h1 {
   font-size: 1rem;
   color: var(--white);
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .about a {
@@ -1080,168 +1080,6 @@ header h1 {
 }
 
 /* ===================================
-   RESPONSIVE DESIGN
-=================================== */
-@media (max-width: 1200px) {
-  .projects-header {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .projects h2 {
-    grid-column: 1;
-  }
-
-  .projects-header-text {
-    grid-column: 1;
-  }
-
-  .project-phrase {
-    max-width: 100%;
-  }
-
-  /* Change to single column layout */
-  .project-content-inner {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 1.5rem;
-  }
-
-  .project-left {
-    grid-column: 1;
-    grid-row: 1;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .project-description {
-    grid-column: 1 / 3;
-  }
-
-  .project-links {
-    grid-column: 1;
-    justify-self: start;
-  }
-
-  .project-footer {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .project-footer {
-    grid-column: 1;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 0.75rem;
-    align-items: start;
-  }
-
-  .project-category-badge {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  .project-tech-label {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .project-tech {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .project-left .project-links {
-    grid-column: 2;
-    grid-row: 2 / 4;
-    align-self: start;
-    justify-self: end;
-  }
-
-  .project-right {
-    grid-column: 1;
-    grid-row: 3;
-    max-width: 100%;
-  }
-
-  .project-image {
-    max-height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects {
-    padding: 3rem 1.5rem;
-    padding-bottom: 0rem;
-  }
-
-  .projects h2 {
-    font-size: 4rem;
-    letter-spacing: -0.3rem;
-  }
-
-  .project-phrase {
-    font-size: 0.9rem;
-  }
-
-  .filter-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.8rem;
-  }
-
-  .project-title {
-    font-size: 1.4rem;
-  }
-
-  .project-description {
-    font-size: 0.95rem;
-  }
-
-  .project-tech .card img {
-    height: 24px;
-  }
-
-  .project-links {
-    gap: 0.6rem;
-  }
-
-  .project-links .social-button {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-header {
-    padding: 1.2rem 0;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-expand-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .project-tech {
-    gap: 0.4rem;
-  }
-
-  .project-tech .card img {
-    height: 22px;
-  }
-
-  .project-links .social-button {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* ===================================
             CONTACT SECTION
    =================================== */
 .contact {
@@ -1775,4 +1613,197 @@ footer .bottom {
 .three p {
   width: 60%;
   font-size: 0.8rem !important;
+}
+
+/* ===================================
+          CV MODAL SECTION
+   =================================== */
+.cv-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cv-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cv-modal {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-modal-overlay.active .cv-modal {
+  transform: scale(1);
+}
+
+.close-cv-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--black);
+  transition: transform 0.2s ease;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-cv-modal:hover {
+  transform: rotate(90deg);
+  background-color: var(--orange);
+}
+
+.close-cv-modal:hover svg {
+  stroke: var(--white);
+}
+
+/* Modal Header */
+.cv-modal h3 {
+  font-size: 2rem;
+  margin: 2rem 2.5rem 0.5rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.cv-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 2.5rem 1.5rem;
+}
+
+/* CV Viewer */
+.cv-viewer {
+  flex: 1;
+  margin: 0 2.5rem;
+  border: 2px solid var(--grey);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+  min-height: 500px;
+}
+
+.cv-viewer iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none;
+  background: white;
+}
+
+/* Fallback for unsupported browsers */
+.cv-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  height: 100%;
+}
+
+.cv-fallback p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--black);
+  color: var(--orange);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.cv-download-btn:hover {
+  background: var(--orange);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* CV Controls */
+.cv-controls {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 2.5rem 2rem;
+  border-top: 1px solid var(--grey);
+}
+
+.cv-action-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cv-action-btn:not(.secondary) {
+  background: var(--black);
+  color: var(--orange);
+  border: 2px solid var(--black);
+}
+
+.cv-action-btn:not(.secondary):hover {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.cv-action-btn.secondary {
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--grey);
+}
+
+.cv-action-btn.secondary:hover {
+  border-color: var(--black);
+  background: var(--black);
+  color: var(--white);
 }

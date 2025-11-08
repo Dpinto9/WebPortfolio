@@ -506,3 +506,84 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initialize filters
   initProjectFilters();
 });
+
+/* ===================================
+   CV MODAL FUNCTIONALITY
+   =================================== */
+
+// CV file path - UPDATE THIS PATH TO YOUR CV FILE
+const CV_PATH = 'assets/cv/Cv.pdf';
+
+// Get modal elements
+const cvModalOverlay = document.querySelector('.cv-modal-overlay');
+const closeCvModal = document.querySelector('.close-cv-modal');
+const cvPdfFrame = document.getElementById('cv-pdf-frame');
+const cvDownloadLink = document.getElementById('cv-download-link');
+const cvDownloadBtn = document.getElementById('cv-download-btn');
+const cvPrintBtn = document.getElementById('cv-print-btn');
+const cvFallback = document.querySelector('.cv-fallback');
+
+// Get all CV trigger buttons (add the class 'open-cv-modal' to any button that should open the CV)
+const cvTriggers = document.querySelectorAll('.open-cv-modal, a[href="#cv"]');
+
+// Function to open CV modal
+function openCvModal() {
+  // Set PDF source
+  cvPdfFrame.src = CV_PATH;
+  cvDownloadLink.href = CV_PATH;
+  cvDownloadBtn.href = CV_PATH;
+  cvPrintBtn.href = CV_PATH;
+  
+  // Check if browser supports PDF viewing
+  const isPdfSupported = navigator.mimeTypes['application/pdf'];
+  
+  if (!isPdfSupported) {
+    cvPdfFrame.style.display = 'none';
+    cvFallback.style.display = 'flex';
+  }
+  
+  // Show modal
+  cvModalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Function to close CV modal
+function closeCvModalFunc() {
+  cvModalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  
+  // Clear iframe source to stop loading
+  setTimeout(() => {
+    cvPdfFrame.src = '';
+  }, 300);
+}
+
+// Add event listeners to all CV triggers
+cvTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    openCvModal();
+  });
+});
+
+// Close modal when clicking close button
+closeCvModal.addEventListener('click', closeCvModalFunc);
+
+// Close modal when clicking outside
+cvModalOverlay.addEventListener('click', (e) => {
+  if (e.target === cvModalOverlay) {
+    closeCvModalFunc();
+  }
+});
+
+// Close modal with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && cvModalOverlay.classList.contains('active')) {
+    closeCvModalFunc();
+  }
+});
+
+// Prevent clicks inside modal from closing it
+document.querySelector('.cv-modal').addEventListener('click', (e) => {
+  e.stopPropagation();
+});

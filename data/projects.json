@@ -45,7 +45,7 @@
       "description": "RESTful API in .NET 8 for managing sports stadiums, including authentication, CRUD operations, and report generation via CLI in multiple formats (CSV, XML, HTML, XSLT).",
       "category": "backend",
       "image": "https://via.placeholder.com/400x250/3a0ca3/ffffff?text=Sports+Management+API",
-      "date": "2025",
+      "date": "2024",
       "technologies": [".NET 8", "Entity Framework", "Postman", "Visual Studio"],
       "links": {
         "demo": "#",
@@ -58,7 +58,7 @@
       "description": "Web platform for managing games with internal token economy, progression logic, rewards, and an administrative dashboard.",
       "category": "fullstack",
       "image": "https://via.placeholder.com/400x250/7209b7/ffffff?text=Game+Management+Platform",
-      "date": "2025",
+      "date": "2024",
       "technologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       "links": {
         "demo": "#",
