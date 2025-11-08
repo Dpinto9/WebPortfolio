@@ -93,26 +93,6 @@
     <main>
       <section id="home" class="introduction">
         <div class="middle">
-          <div class="textTop">
-            <h2>I'm <i>Diogo</i></h2>
-            <img src="assets/images/profile.jpg" alt="profile" />
-            <h2>,</h2>
-          </div>
-          <div class="textMiddle">
-            <h2>a Full-Stack</h2>
-            <img
-              src="https://i.pinimg.com/1200x/19/a4/5b/19a45b79691dbeed31dc5ee5faa44391.jpg"
-              alt="app"
-            />
-            <h2><i>Developer</i></h2>
-          </div>
-          <div class="textBottom">
-            <h2>based in Lisbon</h2>
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F1423589.jpg&f=1&nofb=1&ipt=d9b927fca54a1fa54168b00c276bb85b08d10ee9595850b2a3b2954f70d9d4b3"
-              alt="lisbon"
-            />
-          </div>
           <img src="assets/images/avatar.svg" alt="Avatar" class="avatar" />
         </div>
 
@@ -452,7 +432,32 @@
         </section>
       </section>
 
-      <section id="projects" class="projects"></section>
+
+      <section id="projects" class="projects">
+        <div class="projects-header">
+          <h2>Projects</h2>
+          <div class="projects-header-text">
+            <p class="project-phrase">Every project was made to learn and solve problems, exploring new technologies and creative approaches to development.</p>
+          </div>
+        </div>
+        
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projects will be loaded here dynamically from JSON -->
+        </div>
+
+        <div class="projects-empty" style="display: none;">
+          <h3>No projects found</h3>
+          <p>Try selecting a different category</p>
+        </div>
+      </section>
 
       <section id="contact" class="contact">
         <h2>Let´s Talk</h2>
@@ -624,7 +629,7 @@
 
           <div class="menu-bottom-links">
             <a href="/path-to-cv.pdf" target="_blank">CV</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/diogo-pinto-4ab865278/" target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
