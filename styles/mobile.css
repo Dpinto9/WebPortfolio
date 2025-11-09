@@ -585,6 +585,49 @@
     font-size: 2.5rem;
     letter-spacing: -0.2rem;
   }
+
+  .introTittle span:first-child {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px !important;   /* ← espaço perfeito para bolinha + margem */
+    min-width: 170px;
+    line-height: 1.4;
+    overflow: hidden;
+    padding: 8px 12px;
+    margin: -8px -12px;
+    box-sizing: content-box;
+  }
+
+  /* 2. BOLINHA – posicionamento exato e sem sobreposição */
+  .introTittle span:first-child::before {
+    content: '';
+    position: absolute;
+    left: 12px !important;           
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    background: radial-gradient(circle at 30% 30%, #ff4444, #cc0000);
+    border: 2px solid #ff6666;
+    border-radius: 50%;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* 3. Remove sombras + animação só de opacity */
+  .introTittle span:first-child,
+  .introTittle span:first-child::before {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    animation: mobileRecOpacity 1.6s infinite ease-in-out !important;
+  }
+
+  @keyframes mobileRecOpacity {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.6; }
+  }
+
 }
 
 /* ===================================

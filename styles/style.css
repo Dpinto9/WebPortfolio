@@ -236,6 +236,50 @@ header h1 {
   z-index: 2;
 }
 
+.introTittle span:first-child {
+  position: relative;
+  padding-left: 26px; 
+  display: inline-block;
+  letter-spacing: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Bolinha vermelha */
+.introTittle span:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff0000;
+  animation: recPulse 1.4s infinite;
+}
+
+/* Texto pisca junto com a bolinha */
+.introTittle span:first-child {
+  color: #ff0000;
+  animation: recPulse 1.4s infinite;
+}
+
+/* Animação única (usada por ambos) */
+@keyframes recPulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 12px #ff0000;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0 0 4px #ff0000;
+    filter: brightness(0.8);
+  }
+}
+
 /* BookCase */
 .bookCase {
   grid-column: 2;
