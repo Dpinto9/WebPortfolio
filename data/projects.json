@@ -54,8 +54,8 @@
     },
     {
       "id": 5,
-      "title": "Token-Based Game Management Platform",
-      "description": "Web platform for managing games with internal token economy, progression logic, rewards, and an administrative dashboard.",
+      "title": "PHP - Management Platform",
+      "description": "Web platform for managing users with internal token economy, rewards, and an administrative dashboard.",
       "category": "fullstack",
       "image": "assets/images/projects/token.png",
       "date": "2024",
@@ -63,6 +63,32 @@
       "links": {
         "demo": "#",
         "github": "https://github.com/Dpinto9/PHP-management"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Vinyl Player",
+      "description": "VinylPlayer-CssJS is a web-based application that emulates the experience of using a vinyl record player. Leveraging only CSS and JavaScript, this project offers a lightweight and visually appealing interface for 'playing' digital audio files. While not a fully functional audio player in the traditional sense, it's a unique demonstration of front-end capabilities, focusing on recreating the aesthetic and interactive elements of a classic vinyl player.",
+      "category": "frontend",
+      "image": "assets/images/projects/vinyl.png",
+      "date": "2024",
+      "technologies": ["CSS", "JavaScript", "HTML"],
+      "links": {
+        "demo": "https://dpinto9.github.io/VinylPlayer-CssJS/",
+        "github": "https://github.com/Dpinto9/VinylPlayer-CssJS"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Snake Game - Web",
+      "description": "A modern, browser-based take on the timeless snake game, built with HTML, CSS and vanilla JavaScript. The project delivers a fully interactive experience: the player navigates the snake around the grid, eats the food items to grow longer, and must avoid colliding with its own tail or the boundaries.",
+      "category": "frontend",
+      "image": "assets/images/projects/snake.png",
+      "date": "2024",
+      "technologies": ["CSS", "JavaScript", "HTML"],
+      "links": {
+        "demo": "https://dpinto9.github.io/Snake-Game-v2/",
+        "github": "https://github.com/Dpinto9/Snake-Game-v2"
       }
     }
   ]

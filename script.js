@@ -285,8 +285,7 @@ if (homeSection) observer.observe(homeSection);
 const categoryLabels = {
   frontend: 'Frontend',
   backend: 'Backend',
-  fullstack: 'Full Stack',
-  design: 'Design'
+  fullstack: 'Full Stack'
 };
 
 // Load projects from JSON
