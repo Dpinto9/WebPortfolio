@@ -44,7 +44,7 @@
       "title": "Sports Facilities Management System (API + CLI)",
       "description": "RESTful API in .NET 8 for managing sports stadiums, including authentication, CRUD operations, and report generation via CLI in multiple formats (CSV, XML, HTML, XSLT).",
       "category": "backend",
-      "image": "assets/images/projects/api.png",
+      "image": "https://placehold.co/600x400?text=No+Image",
       "date": "2024",
       "technologies": [".NET 8", "Entity Framework", "Postman", "Visual Studio"],
       "links": {
