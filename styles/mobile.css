@@ -26,6 +26,9 @@
     display: none;
   }
 
+  .middle { padding: 2rem 2rem; gap: 1.5rem; }
+  .introTittle { font-size: clamp(3.5rem, 10vw, 8rem); }
+
   .projects-header {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -195,16 +198,64 @@
   /* Introduction */
   .introduction {
     height: auto;
-    min-height: calc(100vh - var(--header-height));
     padding: 2rem 0;
   }
 
   .middle {
-    width: 90vw;
     height: auto;
     min-height: 50vh;
     padding: 2rem 0;
   }
+
+  .middle {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 1.5rem; 
+    padding: 2rem 1.5rem;
+  }
+
+  .introTittle {
+    font-size: clamp(3rem, 9vw, 5rem);
+    grid-column: unset;
+    grid-row: unset;
+    text-align: center; 
+    justify-content: flex-start; 
+  }
+
+  .bookCase {
+    width: 48%; 
+    min-width: 300px; 
+    max-width: 450px;
+    grid-column: unset;
+    grid-row: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0; 
+    align-self: center; 
+  }
+
+  .bookCase img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+    border-radius: 8px;
+  }
+
+  .connector {
+    display: none; 
+  }
+  
+  .connector::before {
+    content: none;
+  }
+
+  .horizontalIMG { order: unset; grid-column: 1; grid-row: 1; }
+  .verticalIMG { order: unset; grid-column: 2; grid-row: 1 / 3; }
 
   .introFooter {
     flex-direction: column;
