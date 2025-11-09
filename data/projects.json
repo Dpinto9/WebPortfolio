@@ -57,7 +57,7 @@
       "title": "PHP - Management Platform",
       "description": "Web platform for managing users with internal token economy, rewards, and an administrative dashboard.",
       "category": "fullstack",
-      "image": "assets/images/projects/token.png",
+      "image": "https://placehold.co/600x400?text=No+Image",
       "date": "2024",
       "technologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       "links": {
