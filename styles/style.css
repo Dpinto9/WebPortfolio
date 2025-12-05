@@ -1356,6 +1356,10 @@ header h1 {
   transition-delay: 0.4s;
 }
 
+.menu-modal-overlay.active .menu-nav li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
 .menu-nav a {
   font-size: 2.5rem;
   font-weight: 700;
